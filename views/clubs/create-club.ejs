@@ -1,0 +1,14 @@
+<% layout('layouts/boilerplate') %> 
+
+    <h1>Create Club</h1>
+    <form action="/clubs" method="POST">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="club[name]" id="name" placeholder="Enter your name">
+        </div>
+        <div>
+            <label for="club_title">Club-Name</label>
+            <input type="text" name="club[club_title]" id="club_title" placeholder="Enter Club Name">
+        </div>
+        <button>Submit</button>
+    </form>

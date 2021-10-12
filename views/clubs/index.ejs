@@ -1,0 +1,19 @@
+<% layout('layouts/boilerplate') %> 
+
+
+
+
+<% for(let club of clubs){ %> 
+  <% if(currentUser && club.author.equals(currentUser._id)){ %> 
+  <div class="card w-50">
+      <div class="card-body">
+            <h5 class="card-title"><%= club.club_title %> </h5>
+            <a href="/clubs/<%=club._id%>" class="btn btn-primary">View</a>
+              </div>
+          </div>
+          <% } %> 
+            <% } %> 
+
+
+
+            
