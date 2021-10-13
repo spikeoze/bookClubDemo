@@ -11,7 +11,7 @@
                 <a href="/clubs/<%= club._id %>/have_read" class="d-block mb-3 nav-link">Have Read</a>
                 <a href="/clubs/<%= club._id %>/will_read" class="d-block mb-3 nav-link">Will Read</a>
             </div>
-            <form action="/clubs/<%= club._id %>?_method=DELETE" method="POST">
+            <form action="/clubs/<%= club._id %>?_method=DELETE" method="POST" class="needs-validation" nonvalidate>
                 <button class="btn btn-danger mb-3">Delete</button>
             </form>
     </div>

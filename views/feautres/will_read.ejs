@@ -18,7 +18,7 @@
 
     <div class="col-9">
         <div>
-        <form action="/clubs/<%= club._id %>/will_read" method="POST">
+        <form action="/clubs/<%= club._id %>/will_read" method="POST" class="needs-validation" nonvalidate>
             <div class="mb-3">
                 <label class="form-label" for="will_read">Enter Book</label>
                 <input class="form-control" type="text" id="will_read" name="will_read[book_name]">

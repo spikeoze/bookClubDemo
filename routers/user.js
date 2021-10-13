@@ -30,7 +30,8 @@ router.get('/login', (req, res)=>{
 router.post('/login', passport.authenticate('local', {failureRedirect: '/login' }),
 (req, res)=>{
     // console.log(req.user);
-    res.redirect(req.session.returnTo || '/clubs');
+    res.redirect(req.session.returnTo || "/clubs");
+    // console.log(req.session.returnTo);
     delete req.session.returnTo;
 });
 

@@ -33,6 +33,7 @@ app.use(methodOverride('_method'));
 
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //! Session 
 const sessionConfig = {
@@ -65,7 +66,7 @@ passport.deserializeUser(User.deserializeUser());
 //! Local Variables
 
 app.use((req, res, next)=>{
-    if(!['/login'].includes(req.originalUrl)){
+    if(!['/login', '/favicon.ico'].includes(req.originalUrl)){
     req.session.previousReturnTo = req.session.returnTo;
     req.session.returnTo = req.originalUrl;
     }

@@ -4,10 +4,13 @@
     <div class="row">
         <div class="card" style="width: 18rem;">
             <div class="card-body">
-              <form action="/register" method="POST">
+              <form action="/register" method="POST" class="needs-validation" nonvalidate >
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" name="username" id="username">
+                    <input type="text" class="form-control" name="username" id="username" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
@@ -26,3 +29,4 @@
     </div>
 
 </div>
+
