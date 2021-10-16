@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
+
+body{
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #D9D9D9;
+}
+
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.logo{
+    position: relative;
+    top: 17px;
+    left: 5px;
+}
+
+
+.badge{
+    border: 1px #0D0D0D  solid;
+    border-radius:5px;
+    background-color: #0D0D0D ;    
+    color:#F2D335  ;
+    font-size: 12px;
+    font-family:'Lato', sans-serif;
+    padding: 3px 15px;
+    font-weight: 600;
+    margin: 1rem;
+    text-transform: uppercase;
+}
+
+
+a{
+    text-decoration: none;
+    
+}
+
+a:hover{
+    color: #8C862A;
+}
+
+.title{
+    position: relative;
+    left: 4rem;
+    top: 2rem;
+
+}
+
+.title a{
+    color:#0D0D0D;
+    font-size: 25px;
+    padding: 10px;
+    font-family:'Lato', sans-serif;
+}
+
+.links{
+    position: relative;
+   margin: 63px 4rem 0 0;
+}
+
+
+.register{
+    border: 1px #0D0D0D  solid;
+    border-radius:20px;
+    background-color: #0D0D0D ;    
+    color:#F2D335  ;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    padding:9px 25px;
+    margin: 0 1rem 0 1rem;
+}
+
+.login{
+    color: #0D0D0D;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    padding:9px 25px;
+}
+
+
+.clubs{
+    color: #0D0D0D;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    padding:9px 25px;
+}
+
+.create{
+    color: #0D0D0D;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    padding:9px 25px;
+}
+
+
+.logout{
+    border: 1px #0D0D0D  solid;
+    border-radius:20px;
+    background-color: #0D0D0D ;    
+    color:#F2D335  ;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    padding:9px 25px;
+    margin: 0 1rem 0 1rem;
+}
