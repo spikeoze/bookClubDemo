@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
 
 
@@ -21,21 +21,6 @@ body{
     left: 5px;
 }
 
-
-.badge{
-    border: 1px #0D0D0D  solid;
-    border-radius:5px;
-    background-color: #0D0D0D ;    
-    color:#F2D335  ;
-    font-size: 12px;
-    font-family:'Lato', sans-serif;
-    padding: 3px 15px;
-    font-weight: 600;
-    margin: 1rem;
-    text-transform: uppercase;
-}
-
-
 a{
     text-decoration: none;
     
@@ -44,6 +29,22 @@ a{
 a:hover{
     color: #8C862A;
 }
+
+.badge{
+    border: 1px #0D0D0D  solid;
+    border-radius:5px;
+    background-color: #0D0D0D ;    
+    box-shadow: 2px 2px 1px #F2D335;
+    color: white;
+    font-size: 12px;
+    font-family:'Lato', sans-serif;
+    padding: 3px 12px;
+    font-weight: 600;
+    margin: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
 
 .title{
     position: relative;
@@ -56,18 +57,18 @@ a:hover{
     color:#0D0D0D;
     font-size: 25px;
     padding: 10px;
-    font-family:'Lato', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .links{
     position: relative;
-   margin: 63px 4rem 0 0;
+    margin: 63px 4rem 0 0;
 }
 
 
 .register{
     border: 1px #0D0D0D  solid;
-    border-radius:20px;
+    border-radius:50px;
     background-color: #0D0D0D ;    
     color:#F2D335  ;
     font-size: 17px;
@@ -75,14 +76,15 @@ a:hover{
     text-transform: uppercase;
     padding:9px 25px;
     margin: 0 1rem 0 1rem;
+    letter-spacing: 1px;
 }
 
 .login{
-    color: #0D0D0D;
+    color:#0D0D0D ;
     font-size: 17px;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    padding:9px 25px;
+    padding:9px 15px;
 }
 
 
@@ -91,7 +93,7 @@ a:hover{
     font-size: 17px;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    padding:9px 25px;
+    padding:9px 15px;
 }
 
 .create{
@@ -99,13 +101,13 @@ a:hover{
     font-size: 17px;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    padding:9px 25px;
+    padding:9px 15px;
 }
 
 
 .logout{
-    border: 1px #0D0D0D  solid;
-    border-radius:20px;
+    border: 1px #262526  solid;
+    border-radius:50px;
     background-color: #0D0D0D ;    
     color:#F2D335  ;
     font-size: 17px;
@@ -113,4 +115,5 @@ a:hover{
     text-transform: uppercase;
     padding:9px 25px;
     margin: 0 1rem 0 1rem;
+    letter-spacing: 1px;
 }
