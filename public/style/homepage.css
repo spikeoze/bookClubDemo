@@ -75,8 +75,11 @@ a{
 }
 
 .main-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
-    top: 100px;
+    bottom: 55px;
 }
 
 .main-text h1{

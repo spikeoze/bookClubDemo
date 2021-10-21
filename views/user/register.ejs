@@ -1,29 +1,29 @@
 <% layout('layouts/boilerplate') %> 
 
-<div class="container d-flex justify-content-center align-items-center mb-5 mt-5 ">
-    <div class="row">
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <form action="/register" method="POST" >
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" name="username" id="username" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" name="email" id="email" required>
-                </div>
+<div class="container grid card ">
+    <div class=" main-form card-body">
+        <form action="/register" method="POST">
+            <div class="text-logo">
 
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="password" id="password" required>
-                </div>
+                <img src="image/user.png" alt="user">
+                <h1>Sign up</h1>
 
-                <button class="btn btn-success">Register</button>
-            </form>
+
             </div>
-          </div>
+
+            <div class="form-control">
+                <input type="text" name="username" id="username" placeholder="Username" required>
+            </div>
+
+            <div class="form-control">
+                <input type="email" name="email" id="email" placeholder="@Email" required>
+            </div>
+
+            <div class="form-control">
+                <input type="password" name="password" id="password" placeholder="Password" required>
+            </div>
+
+            <button class="form-register">Register</button>
+        </form>
     </div>
-
 </div>
-

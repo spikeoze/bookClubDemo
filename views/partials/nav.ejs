@@ -1,23 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand"href="/">BookClubDemo<% if(currentUser)  {%>  <span class="badge bg-secondary ms-2"><%= currentUser.username %> </span><% } %> </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end ps-3" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="/create">Create</a>
-          <a class="nav-link" href="/clubs">Clubs</a>
-          <% if(!currentUser){ %> 
-          <a class="nav-link" href="/register">Register </a>
-          <a class="nav-link" href="/login">login</a>
-          <% }else{%> 
-          <a class="nav-link" href="/logout">Logout</a>
-          
-          <h5></h5>
-            <% }  %> 
-        </div>
-      </div>
-    </div>
-  </nav>
-  
+<div class="container flex">
+   <h1><a href="/">BookClubDemo</a><% if(currentUser)  {%>  <span class="btn-badge"><%= currentUser.username %><% } %></span></h1>
+    <nav>
+        <ul>
+        <% if(!currentUser){ %> 
+            <li> <a class="nav-link login other-links" href="/login">login</a></li>
+            <li> <a class="nav-link register btn " href="/register">Register </a></li>
+            <% }else{ %> 
+            <li> <a class="nav-link create other-links" href="/create">Create</a></li>
+            <li> <a class="nav-link clubs other-links" href="/clubs">Clubs</a></li>
+            <li> <a class="nav-link logout btn " href="/logout">Logout</a></li>
+            <% } %> 
+        </ul>
+    </nav>
+</div>

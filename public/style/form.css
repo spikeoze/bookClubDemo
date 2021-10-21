@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+:root{
+    --primary-color:#F7FBFF;
+    --btn-color:#13212A;
+    --shadow-color:#FDC23E;
+    --hover-color:#C4DAE3;
+    --text-color:#000000;
+    --main-font:'Montserrat', sans-serif;
+}
+
+/* Form */
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.grid-form{
+    display: grid;
+    grid-template-columns: 55% 45%;
+    gap: 30px;
+}
+
+
+.main-form{
+    width: 330px;
+    height: auto;
+    
+}
+
+
+
+.text-logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform:uppercase ;
+    margin: 5px 0;
+    
+}
+
+.text-logo img{
+    background-color: #13212A;
+    border-radius: 30px;
+    padding: 20px;
+    margin-bottom: 10px;
+    box-shadow: 2px 2.5px 2px var(--shadow-color);
+}
+
+.form-control{
+    margin: 30px 0;
+}
+
+
+
+.form-control input[type="text"], 
+.form-control input[type="email"],
+.form-control input[type="password"]{
+
+    border: none;
+    border-bottom: 2px solid rgb(190, 184, 184);
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+    
+    /* background-color: var(--hover-color); */
+    
+}
+
+/* .form-control input::placeholder{
+    color: var(--primary-color);
+} */
+
+
+.form-control input:focus{
+    outline: none;
+}
+
+
+
+.form-register{
+    border-radius: 50px;
+    padding: 10px 15px;
+    width: 100%;
+    margin: 10px 0;
+    color: var(--primary-color);
+    text-transform: uppercase ;
+    background-color: var(--btn-color);
+    box-shadow: 2px 3px 1px var(--shadow-color);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.logo{
+    position: relative;
+    top: 20px;
+}
+
+/* Utilities */
+.card-body{
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 10px;
+}
+
+
+
+
+
+
+
+
+

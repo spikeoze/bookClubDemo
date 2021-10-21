@@ -1,17 +1,22 @@
-<% layout('layouts/boilerplate') %> 
+<% layout('layouts/boilerplate') %>
 
-    <h1>Create Club</h1>
-    <form action="/clubs" method="POST" class="needs-validation" nonvalidate>
-        <div>
-            <label for="name">Name</label>
-            <input type="text" name="club[name]" id="name" placeholder="Enter your name" required >
-            <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                Please choose a username.
-              </div>
+    <div class="container grid card ">
+        <div class=" main-form card-body">
+            <form action="/clubs" method="POST">
+                <div class="text-logo">
+
+                    <img src="image/pen.png" alt="user">
+                    <h1>create club</h1>
+
+                </div>
+                <div class="form-control">
+                    <input type="text" name="club[name]" id="name" placeholder="Name" required>
+
+                </div>
+                <div class="form-control">
+                    <input type="text" name="club[club_title]" id="club_title" placeholder="Club Name" required>
+                </div>
+                <button class="form-register">Create</button>
+            </form>
         </div>
-        <div>
-            <label for="club_title">Club-Name</label>
-            <input type="text" name="club[club_title]" id="club_title" placeholder="Enter Club Name" required >
-        </div>
-        <button>Submit</button>
-    </form>
+    </div>
