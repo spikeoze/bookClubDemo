@@ -112,15 +112,21 @@ app.use('/', userRouter);
 //! Error handling
 
 app.get('*', (req, res, next)=>{
+    req.session.returnTo = req.session.previousReturnTo;
     next(new expressError('404 Page not found', 404));
-    console.log(Error().message)
+   
+})
+
+
+app.use((err, req, res, next)=>{
+    const {status = 500} = err;
+    if(!err.message) err.message = "Something went wrong";
+    res.status(status).render('error', {err});
+    // console.log(err);
 })
 
 
 
-
-
-
 app.listen('4000', ()=>{
-    console.log('Listning on port 4000')
+    console.log('Listning on port 4000');
 })

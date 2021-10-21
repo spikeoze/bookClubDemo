@@ -1,0 +1,21 @@
+
+.btn-badge-error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    bottom: 5px;
+    border-radius: 3px;
+    padding: 5px 10px;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    font-size: 30px;
+    text-transform: uppercase ;
+    background-color: rgb(218, 87, 87);
+    box-shadow: 2px 3px 5px var(--hover-color );
+    cursor: pointer;
+}
+
+
+
+

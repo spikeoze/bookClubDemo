@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/homepage.css">
+    <link rel="stylesheet" href="style/error.css">
+    <title>BookClubDemo</title>
+</head>
+<!-- <span class="logo"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+  width="30" height="50"
+  viewBox="0 0 226 226"
+  style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,226v-226h226v226z" fill="none"></path><g><path d="M174.79688,48.32516l-61.79687,16.12016v145.66406l101.52344,-26.48437v-22.07031v-123.59375z" fill="#f1c40f"></path><path d="M62.25594,51.20754l-11.05281,-2.88238l-15.89062,-4.1448l-23.83594,-6.21941v145.66406l101.52344,26.48438v-145.66406z" fill="#313a52"></path><path d="M62.25594,51.20754l-0.45906,1.76121v48.55469l-13.24219,-17.65625l-13.24219,17.65625v-57.34309l15.89063,4.1448z" fill="#e64c42"></path><path d="M143.89844,15.89063v26.48438l-30.89844,22.07031z" fill="#ecf0f1"></path><path d="M82.10156,15.89063l30.89844,48.55469l-30.89844,-22.07031z" fill="#ecf0f1"></path><path d="M174.79688,20.30469v28.02047l-61.79687,16.12016l30.89844,-22.07031z" fill="#d7deed"></path><path d="M113,64.44531l-50.74406,-13.23777l-11.05281,-2.88238v-28.02047l30.89844,22.07031z" fill="#d7deed"></path><rect x="67.77143" y="486.19116" transform="rotate(-45.001) scale(0.44141,0.44141)" width="10" height="10" fill="#f1c40f"></rect><rect x="-30.01871" y="456.69834" transform="rotate(-45.001) scale(0.44141,0.44141)" width="19.997" height="19.998" fill="#f1c40f"></rect><rect x="-108.99543" y="323.55061" transform="rotate(-45.001) scale(0.44141,0.44141)" width="19.997" height="19.996" fill="#f1c40f"></rect><rect x="-200.91706" y="316.47882" transform="rotate(-45.001) scale(0.44141,0.44141)" width="19.997" height="19.996" fill="#f1c40f"></rect><path d="M214.52344,158.16336l-62.93394,16.78271c-2.35579,0.62812 -3.75593,3.04659 -3.1278,5.40193c0.52616,1.97485 2.31076,3.27832 4.26222,3.27832c0.37652,0 0.75922,-0.04855 1.13971,-0.15052l60.65981,-16.17577v-5.74534z" fill="#f1c40f"></path><path d="M154.68729,80.7513c0.58354,1.89761 2.33018,3.11721 4.21764,3.11721c0.42993,0 0.86736,-0.06312 1.29906,-0.19643l54.31945,-16.71385v-9.23643l-56.91492,17.51235c-2.33062,0.71684 -3.63807,3.18695 -2.92123,5.51714z" fill="#f1c40f"></path></g></g></svg></span></a> 
+  <% if(currentUser)  {%>  <span class="badge"><%= currentUser.username %> </span><% } %> -->
+  <body>
+    <!-- NavBar -->
+
+
+    <div class="navbar">
+
+        <div class="container flex">
+
+                <h1><a href="/">BookClubDemo</a><% if(currentUser)  {%>  <span class="btn-badge"><%= currentUser.username %><% } %></span></h1>
+                <nav>
+                    <ul>
+                       <% if(!currentUser){ %> 
+                        <li> <a class="nav-link login other-links" href="/login">login</a></li>
+                        <li> <a class="nav-link register btn " href="/register">Register </a></li>
+                        <% }else{ %> 
+                        <li> <a class="nav-link create other-links" href="/create">Create</a></li>
+                        <li> <a class="nav-link clubs other-links" href="/clubs">Clubs</a></li>
+                        <li> <a class="nav-link logout btn " href="/logout">Logout</a></li>
+                        <% } %> 
+                    </ul>
+                </nav>
+        </div>
+
+    
+    </div>
+        <!-- Main -->
+        <main>
+            <div class="container felx">
+               <h1 class="btn-badge-error"><%- err.satus %>  <%- err.message %>  </h1>
+            
+               
+
+            </div>
+            
+        </main>
+        
+           
+
+
+
+</body>
+</html>
