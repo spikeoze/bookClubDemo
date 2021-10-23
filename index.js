@@ -6,6 +6,7 @@ const ejsMate = require('ejs-mate');
 const session = require('express-session')
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
+const helmet = require('helmet');
 
 const {isLoggedIn} = require('./middlewere');
 
@@ -34,6 +35,8 @@ app.use(methodOverride('_method'));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(helmet());
+
 
 //! Session 
 const sessionConfig = {
