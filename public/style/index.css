@@ -1,0 +1,75 @@
+:root{
+    --primary-color:#F7FBFF;
+    --btn-color:#13212A;
+    --shadow-color:#FDC23E;
+    --hover-color:#C4DAE3;
+    --text-color:#000000;
+    --main-font:'Montserrat', sans-serif;
+}
+
+
+
+.felx{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+/* Scroll style */
+
+.felx::-webkit-scrollbar {
+    width: 10px;
+}
+   
+.felx::-webkit-scrollbar-track {
+    box-shadow: inset  0 0 3px rgba(0, 0, 0, 0.3);
+    border-radius: 60px;
+}
+   
+.felx::-webkit-scrollbar-thumb {
+    background-color: #C4DAE3;
+    border-radius: 60px;
+}
+
+   
+.felx::-webkit-scrollbar-thumb:hover {
+    background-color:#FDC23E ;
+}
+
+
+
+
+.card-flex{
+    display: flex;
+    justify-content:space-between;
+}
+
+
+.card{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 10px 10px;
+}
+
+
+
+.view-btn{
+    border-radius: 50px;
+    padding: 10px 20px;
+    color: var(--primary-color);
+    text-transform: uppercase ;
+    background-color: var(--btn-color);
+    box-shadow: 2px 3px 1px var(--shadow-color);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 200;
+    align-self: center;
+}
