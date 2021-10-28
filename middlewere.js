@@ -13,12 +13,3 @@ module.exports.isLoggedIn = (req, res, next)=>{
 }
 
 
-module.exports.isAuthor = (req, res, next)=>{
-    const {id} = req.params;
-    const club = Club.findById(id);
-    if(!club.author.equals(req.user._id)){
-        req.render('error.ejs')
-    }
-    next();
-}
-
