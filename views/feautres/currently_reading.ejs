@@ -1,42 +1,72 @@
-<% layout('layouts/boilerplate') %> 
+<% layout('layouts/boilerplate') %>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-3 bg-light">
+    <%- include('./style.ejs'); %>
 
-            
-            <h1 class="mt-3"><%= club.club_title %></h1>
-            <div>
-                <a href="/clubs/<%= club._id %>/currently_reading" class="d-block mb-3 nav-link active">Currently Reading</a>
-                <a href="/clubs/<%= club._id %>/have_read" class="d-block mb-3 nav-link">Have Read</a>
-                <a href="/clubs/<%= club._id %>/will_read" class="d-block mb-3 nav-link">Will Read</a>
+        <div class="container show-grid">
+
+            <div class="show-card show-flex">
+                <h1>
+                    <%= club.club_title %>
+                </h1>
+                <div class="show-links">
+                    <ul>
+                        <li><a href="/clubs/<%= club._id %>/currently_reading" class="active">Currently Reading</a>
+                        </li>
+                        <li><a href="/clubs/<%= club._id %>/have_read">Have Read</a></li>
+                        <li><a href="/clubs/<%= club._id %>/will_read">Will Read</a></li>
+                    </ul>
+                </div>
+
+                <form action="/clubs/<%= club._id %>?_method=DELETE" class="show-form" method="POST">
+                    <button class="show-btn">Delete</button>
+                </form>
             </div>
-            <form action="/clubs/<%= club._id %>?_method=DELETE" method="POST" class="needs-validation" nonvalidate>
-                <button class="btn btn-danger mb-3">Delete</button>
-            </form>
-    </div>
 
-    <div class="col-9">
-        <div>
-        <form action="/clubs/<%= club._id %>/currently_reading" method="POST">
-            <div class="mb-3">
-                <label class="form-label" for="currently_reading">Enter Book</label>
-                <input class="form-control" type="text" id="currently_reading" name="reading[book_name]">
+
+
+
+
+
+            <div class="search-book-side">
+
+                <form action="/clubs/<%= club._id %>/currently_reading" method="POST">
+                    <div class="form-control">
+
+                        <input type="text" id="currently_reading" name="reading[book_name]"
+                            placeholder="Currently Reading....">
+                    </div>
+                    <div>
+                        <button class="add-btn">+</button>
+                    </div>
+                </form>
+
+                <div class="felx">
+                    <% for(let reading of club.currently_reading){ %>
+                        <div class="book-card">
+
+                            <img src="/image/book2.png" alt="" srcset="">
+
+                            <div class="title">
+                                <h2>TITLE :</h2>
+                                <p>
+                                    <%= reading.book_name %>
+                                </p>
+                            </div>
+                            <form action="/clubs/<%= club._id %>/currently_reading/<%= reading._id %>?_method=DELETE" method="post">
+                                <button class="delete-btn"><img src="/image/delete.png" alt="trash"></button>
+                            </form>
+
+                        </div>
+                        <% } %>
+
+
+
+                </div>
+
             </div>
-            <button class="btn btn-primary">Add</button>
-        </form>
+
+
+
+
+
         </div>
-
-        <div>
-            <% for(let reading of club.currently_reading){ %> 
-
-                <p class="mt-3"><%= reading.book_name %> </p>        
-                
-
-                <% } %> 
-        </div>
-
-    </div>
-
-    </div>
-</div>

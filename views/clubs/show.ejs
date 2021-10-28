@@ -1,24 +1,34 @@
-<% layout('layouts/boilerplate') %> 
+<% layout('layouts/boilerplate') %>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-3 bg-light">
+    
+    
+ 
+<%- include('./style.ejs'); %>
+        <div class="container show-grid">
+            <div class="show-card show-flex">
+
+                <h1>
+                    <%= club.club_title %>
+                </h1>
+
+                <div class="show-links">
+                    <ul>
+                        <li><a href="/clubs/<%= club._id %>/currently_reading">Currently Reading</a></li>
+                        <li><a href="/clubs/<%= club._id %>/have_read">Have Read</a></li>
+                        <li><a href="/clubs/<%= club._id %>/will_read">Will Read</a></li>
+                    </ul>
+                </div>
+
+                <form action="/clubs/<%= club._id %>?_method=DELETE" class="show-form" method="POST">
+                    <button class="show-btn">Delete</button>
+                </form>
+            </div>
 
             
-            <h1 class="mt-3"><%= club.club_title %></h1>
             <div>
-                <a href="/clubs/<%= club._id %>/currently_reading" class="d-block mb-3">Currently Reading</a>
-                <a href="/clubs/<%= club._id %>/have_read" class="d-block mb-3">Have Read</a>
-                <a href="/clubs/<%= club._id %>/will_read" class="d-block mb-3">Will Read</a>
+                <h1>About: </h1>
+                <h1 class="show-text">This club is created by <%= club.name %> </h1>
             </div>
-            <form action="/clubs/<%= club._id %>?_method=DELETE" method="POST">
-                <button class="btn btn-danger mb-3">Delete</button>
-            </form>
-    </div>
 
-    <div class="col-9">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-    </div>
 
-    </div>
-</div>
+        </div>

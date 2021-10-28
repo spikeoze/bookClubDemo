@@ -5,11 +5,20 @@ const Reading = require('../models/currentlyReading');
 const HaveRead = require("../models/haveRead");
 const WillRead = require("../models/willRead");
 
-
+const {isLoggedIn} = require('../middlewere');
 const catchAsync  = require('../utilities/catchAsync');
 
 
-router.get('/clubs/:id/currently_reading',catchAsync( async(req, res)=>{
+
+
+
+// GET REQUESTS
+
+
+
+// currently_reading
+
+router.get('/clubs/:id/currently_reading' ,isLoggedIn ,catchAsync( async(req, res)=>{
     const {id} = req.params
     const club = await Club.findById(id)
         .populate({
@@ -20,7 +29,10 @@ router.get('/clubs/:id/currently_reading',catchAsync( async(req, res)=>{
 }));
 
 
-router.get('/clubs/:id/have_read',catchAsync( async(req, res)=>{
+
+// have read
+
+router.get('/clubs/:id/have_read',isLoggedIn ,catchAsync( async(req, res)=>{
     const {id} = req.params
     const club = await Club.findById(id)
         .populate({
@@ -31,8 +43,10 @@ router.get('/clubs/:id/have_read',catchAsync( async(req, res)=>{
 }));
 
 
+// will read
 
-router.get('/clubs/:id/will_read',catchAsync( async(req, res)=>{
+
+router.get('/clubs/:id/will_read',isLoggedIn ,catchAsync( async(req, res)=>{
     const {id} = req.params
     const club = await Club.findById(id)
         .populate({
@@ -44,7 +58,12 @@ router.get('/clubs/:id/will_read',catchAsync( async(req, res)=>{
 
 
 
-router.post('/clubs/:id/currently_reading', catchAsync(async(req, res)=>{
+// POST REQUESTS
+
+
+
+//currently reading
+router.post('/clubs/:id/currently_reading',isLoggedIn , catchAsync(async(req, res)=>{
     const {id} = req.params;
     const club = await Club.findById(id);
     const book = new Reading(req.body.reading);
@@ -59,7 +78,9 @@ router.post('/clubs/:id/currently_reading', catchAsync(async(req, res)=>{
 
 
 
-router.post('/clubs/:id/have_read', catchAsync(async(req, res)=>{
+// Have Read
+
+router.post('/clubs/:id/have_read',isLoggedIn ,catchAsync(async(req, res)=>{
     const {id} = req.params;
     const club = await Club.findById(id);
     const book = new HaveRead(req.body.have_read);
@@ -73,7 +94,9 @@ router.post('/clubs/:id/have_read', catchAsync(async(req, res)=>{
 }));
 
 
-router.post('/clubs/:id/will_read', catchAsync(async(req, res)=>{
+// Will Read
+
+router.post('/clubs/:id/will_read',isLoggedIn , catchAsync(async(req, res)=>{
     const {id} = req.params;
     const club = await Club.findById(id);
     const book = new WillRead(req.body.will_read);
@@ -85,6 +108,49 @@ router.post('/clubs/:id/will_read', catchAsync(async(req, res)=>{
     // console.log(req.body)
     res.redirect(`/clubs/${club._id}/will_read`);
 }));
+
+
+
+
+
+
+
+
+
+// DELETE REQUESTS
+
+
+//currently reading
+
+router.delete('/clubs/:id/currently_reading/:bookId',isLoggedIn , catchAsync(async(req, res)=>{
+    const {id, bookId } = req.params;
+    await Club.findByIdAndUpdate(id, {$pull:{currently_reading: bookId }});
+    await Reading.findByIdAndDelete(bookId);
+    res.redirect(`/clubs/${id}/currently_reading`);
+}));
+
+
+// have read
+
+router.delete('/clubs/:id/have_read/:bookId',isLoggedIn , catchAsync(async(req, res)=>{
+    const {id, bookId } = req.params;
+    await Club.findByIdAndUpdate(id, {$pull:{have_read: bookId }});
+    await HaveRead.findByIdAndDelete(bookId);
+    res.redirect(`/clubs/${id}/have_read`);
+}));
+
+
+
+// will read
+
+router.delete('/clubs/:id/will_read/:bookId',isLoggedIn , catchAsync(async(req, res)=>{
+    const {id, bookId } = req.params;
+    await Club.findByIdAndUpdate(id, {$pull:{will_read: bookId }});
+    await WillRead.findByIdAndDelete(bookId);
+    res.redirect(`/clubs/${id}/will_read`);
+}));
+
+
 
 
 module.exports = router

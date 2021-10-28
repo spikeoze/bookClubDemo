@@ -1,17 +1,17 @@
 <% layout('layouts/boilerplate') %>
 
 
-
+  <div class="container felx"">
 
   <% for(let club of clubs){ %>
     <% if(currentUser && club.author.equals(currentUser._id)){ %>
-      <div class="container felx"">
-      <div class=" card">
-        <h1 class="card-title">
-          <%= club.club_title %>
-        </h1>
-        <a href="/clubs/<%=club._id%>" class="view-btn">View</a>
+      
+      <div class=" index-card">
+    <h1 class="card-title">
+      <%= club.club_title %>
+    </h1>
+    <a href="/clubs/<%=club._id%>" class="view-btn">View</a>
+  </div>
+  <% } %>
+    <% } %>
       </div>
-      </div>
-      <% } %>
-        <% } %>

@@ -1,42 +1,72 @@
 <% layout('layouts/boilerplate') %> 
+<%- include('./style.ejs'); %>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-3 bg-light">
+<div class="container show-grid">
 
-            
-            <h1 class="mt-3"><%= club.club_title %></h1>
-            <div>
-                <a href="/clubs/<%= club._id %>/currently_reading" class="d-block mb-3 nav-link active">Currently Reading</a>
-                <a href="/clubs/<%= club._id %>/have_read" class="d-block mb-3 nav-link">Have Read</a>
-                <a href="/clubs/<%= club._id %>/will_read" class="d-block mb-3 nav-link">Will Read</a>
-            </div>
-            <form action="/clubs/<%= club._id %>?_method=DELETE" method="POST" class="needs-validation" nonvalidate>
-                <button class="btn btn-danger mb-3">Delete</button>
-            </form>
-    </div>
+    <div class="show-card show-flex">
+        <h1>
+            <%= club.club_title %>
+        </h1>
+        <div class="show-links">
+            <ul>
+                <li><a href="/clubs/<%= club._id %>/currently_reading" >Currently Reading</a>
+                </li>
+                <li><a href="/clubs/<%= club._id %>/have_read" class="active" >Have Read</a></li>
+                <li><a href="/clubs/<%= club._id %>/will_read">Will Read</a></li>
+            </ul>
+        </div>
 
-    <div class="col-9">
-        <div>
-        <form action="/clubs/<%= club._id %>/have_read" method="POST">
-            <div class="mb-3">
-                <label class="form-label" for="have_read">Enter Book</label>
-                <input class="form-control" type="text" id="have_read" name="have_read[book_name]">
-            </div>
-            <button class="btn btn-primary">Add</button>
+        <form action="/clubs/<%= club._id %>?_method=DELETE" class="show-form" method="POST">
+            <button class="show-btn">Delete</button>
         </form>
-        </div>
+    </div>
 
-        <div>
+
+
+
+
+
+
+
+    <div class="search-book-side">
+
+        <form action="/clubs/<%= club._id %>/have_read" method="POST">
+            <div class="form-control">
+
+                <input type="text" id="have_read" name="have_read[book_name]"
+                    placeholder="Have Read....">
+            </div>
+            <div>
+                <button class="add-btn">+</button>
+            </div>
+        </form>
+
+        <div class="felx">
             <% for(let have_read of club.have_read){ %> 
+            <div class="book-card">
 
-                <p class="mt-3"><%= have_read.book_name %> </p>        
-                
+                <img src="/image/book2.png" alt="" srcset="">
+               
+                <div class="title">
+                    <h2>TITLE :</h2>
+                    <p>
+                        <%= have_read.book_name %> 
+                    </p>
+                </div>
+                <form action="/clubs/<%= club._id %>/have_read/<%= have_read._id %>?_method=DELETE" method="post">
+                    <button class="delete-btn"><img src="/image/delete.png" alt="trash"></button>
+                </form>
 
-                <% } %> 
+            </div>
+            <% } %>
+           
+            
+
         </div>
 
     </div>
 
-    </div>
+
 </div>
+
+
